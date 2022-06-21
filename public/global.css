@@ -1,0 +1,19 @@
+.payment-wrapper {
+  width: 100%;
+}
+.payment-wrapper > div {
+  padding: 19px 10px;
+}
+
+.ant-select-dropdown,
+.ant-picker-dropdown {
+  z-index: 999999999;
+}
+.rating-desktop h3 {
+  margin-bottom: 0;
+}
+@media (max-width: 500px) {
+  .no-available {
+    padding: 2rem;
+  }
+}

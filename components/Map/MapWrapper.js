@@ -1,0 +1,18 @@
+import React from 'react';
+import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+
+const libraries = ["places"];
+
+const MapWrapper = ({ children, ...rest }) => {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_MAP_API_KEY,
+    libraries
+  });
+
+  if (loadError) {
+    return <div>Map cannot be loaded right now, sorry.</div>;
+  }
+  return <>{isLoaded && <GoogleMap {...rest}>{children}</GoogleMap>}</>;
+};
+
+export default MapWrapper;
